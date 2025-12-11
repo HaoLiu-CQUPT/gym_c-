@@ -31,6 +31,4 @@ Thumbs.db
 
 # Windows 特定
 *.bat
-!初始化Git仓库.bat
-!推送到GitHub.bat
 

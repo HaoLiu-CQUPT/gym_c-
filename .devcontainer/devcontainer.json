@@ -1,0 +1,42 @@
+{
+  "name": "Qt C++ Development",
+  "image": "mcr.microsoft.com/devcontainers/cpp:1-ubuntu-22.04",
+  
+  "features": {
+    "ghcr.io/devcontainers/features/common-utils:2": {
+      "installZsh": true,
+      "installOhMyZsh": true
+    }
+  },
+
+  "postCreateCommand": "bash .devcontainer/setup.sh",
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-vscode.cpptools",
+        "ms-vscode.cmake-tools",
+        "twxs.cmake",
+        "ms-vscode.cpptools-extension-pack"
+      ],
+      "settings": {
+        "C_Cpp.default.intelliSenseMode": "linux-gcc-x64",
+        "cmake.configureOnOpen": true
+      }
+    }
+  },
+
+  "remoteEnv": {
+    "DISPLAY": ":99",
+    "QT_QPA_PLATFORM": "xcb"
+  },
+
+  "forwardPorts": [6080],
+  "portsAttributes": {
+    "6080": {
+      "label": "VNC",
+      "onAutoForward": "ignore"
+    }
+  }
+}
+
