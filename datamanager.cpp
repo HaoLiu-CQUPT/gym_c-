@@ -3,6 +3,7 @@
 #include <QFile>
 #include <QTextStream>
 #include <QDebug>
+#include <QStringConverter>
 
 DataManager::DataManager()
 {
@@ -366,7 +367,11 @@ void DataManager::loadUsers()
     QFile file(usersFile);
     if (file.open(QIODevice::ReadOnly | QIODevice::Text)) {
         QTextStream in(&file);
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+        in.setEncoding(QStringConverter::Utf8);
+#else
         in.setCodec("UTF-8");
+#endif
         while (!in.atEnd()) {
             QString line = in.readLine();
             QStringList parts = line.split("|");
@@ -389,7 +394,11 @@ void DataManager::saveUsers()
     QFile file(usersFile);
     if (file.open(QIODevice::WriteOnly | QIODevice::Text)) {
         QTextStream out(&file);
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+        out.setEncoding(QStringConverter::Utf8);
+#else
         out.setCodec("UTF-8");
+#endif
         for (const User& u : users) {
             QString roleStr = "Reception";
             if (u.getRole() == UserRole::Admin) roleStr = "Admin";
@@ -406,7 +415,11 @@ void DataManager::loadMembers()
     QFile file(membersFile);
     if (file.open(QIODevice::ReadOnly | QIODevice::Text)) {
         QTextStream in(&file);
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+        in.setEncoding(QStringConverter::Utf8);
+#else
         in.setCodec("UTF-8");
+#endif
         while (!in.atEnd()) {
             QString line = in.readLine();
             QStringList parts = line.split("|");
@@ -428,7 +441,11 @@ void DataManager::saveMembers()
     QFile file(membersFile);
     if (file.open(QIODevice::WriteOnly | QIODevice::Text)) {
         QTextStream out(&file);
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+        out.setEncoding(QStringConverter::Utf8);
+#else
         out.setCodec("UTF-8");
+#endif
         for (const Member& m : members) {
             out << m.getId() << "|" << m.getName() << "|" << m.getPhone() << "|"
                 << m.getGender() << "|" << m.getJoinDate().toString("yyyy-MM-dd") << "|"
@@ -445,7 +462,11 @@ void DataManager::loadCoaches()
     QFile file(coachesFile);
     if (file.open(QIODevice::ReadOnly | QIODevice::Text)) {
         QTextStream in(&file);
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+        in.setEncoding(QStringConverter::Utf8);
+#else
         in.setCodec("UTF-8");
+#endif
         while (!in.atEnd()) {
             QString line = in.readLine();
             QStringList parts = line.split("|");
@@ -467,7 +488,11 @@ void DataManager::saveCoaches()
     QFile file(coachesFile);
     if (file.open(QIODevice::WriteOnly | QIODevice::Text)) {
         QTextStream out(&file);
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+        out.setEncoding(QStringConverter::Utf8);
+#else
         out.setCodec("UTF-8");
+#endif
         for (const Coach& c : coaches) {
             out << c.getId() << "|" << c.getName() << "|" << c.getPhone() << "|"
                 << c.getGender() << "|" << c.getHireDate().toString("yyyy-MM-dd") << "|"
@@ -484,7 +509,11 @@ void DataManager::loadCourses()
     QFile file(coursesFile);
     if (file.open(QIODevice::ReadOnly | QIODevice::Text)) {
         QTextStream in(&file);
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+        in.setEncoding(QStringConverter::Utf8);
+#else
         in.setCodec("UTF-8");
+#endif
         while (!in.atEnd()) {
             QString line = in.readLine();
             QStringList parts = line.split("|");
@@ -508,7 +537,11 @@ void DataManager::saveCourses()
     QFile file(coursesFile);
     if (file.open(QIODevice::WriteOnly | QIODevice::Text)) {
         QTextStream out(&file);
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+        out.setEncoding(QStringConverter::Utf8);
+#else
         out.setCodec("UTF-8");
+#endif
         for (const Course& c : courses) {
             out << c.getId() << "|" << c.getName() << "|" << c.getCoachId() << "|"
                 << c.getCoachName() << "|" << c.getStartTime().toString("hh:mm") << "|"
@@ -527,7 +560,11 @@ void DataManager::loadEquipment()
     QFile file(equipmentFile);
     if (file.open(QIODevice::ReadOnly | QIODevice::Text)) {
         QTextStream in(&file);
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+        in.setEncoding(QStringConverter::Utf8);
+#else
         in.setCodec("UTF-8");
+#endif
         while (!in.atEnd()) {
             QString line = in.readLine();
             QStringList parts = line.split("|");
@@ -550,7 +587,11 @@ void DataManager::saveEquipment()
     QFile file(equipmentFile);
     if (file.open(QIODevice::WriteOnly | QIODevice::Text)) {
         QTextStream out(&file);
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+        out.setEncoding(QStringConverter::Utf8);
+#else
         out.setCodec("UTF-8");
+#endif
         for (const Equipment& e : equipmentList) {
             out << e.getId() << "|" << e.getName() << "|" << e.getType() << "|"
                 << e.getPurchaseDate().toString("yyyy-MM-dd") << "|"
@@ -567,7 +608,11 @@ void DataManager::loadReservations()
     QFile file(reservationsFile);
     if (file.open(QIODevice::ReadOnly | QIODevice::Text)) {
         QTextStream in(&file);
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+        in.setEncoding(QStringConverter::Utf8);
+#else
         in.setCodec("UTF-8");
+#endif
         while (!in.atEnd()) {
             QString line = in.readLine();
             QStringList parts = line.split("|");
@@ -592,7 +637,11 @@ void DataManager::saveReservations()
     QFile file(reservationsFile);
     if (file.open(QIODevice::WriteOnly | QIODevice::Text)) {
         QTextStream out(&file);
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+        out.setEncoding(QStringConverter::Utf8);
+#else
         out.setCodec("UTF-8");
+#endif
         for (const Reservation& r : reservations) {
             QString typeStr = r.getType() == ReservationType::Equipment ? 
                 "Equipment" : "Course";
