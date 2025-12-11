@@ -1,0 +1,34 @@
+# Gitpod 忽略文件
+# 类似于 .gitignore，但专门用于 Gitpod 环境
+
+# 编译输出
+build/
+*.o
+*.a
+*.so
+*.exe
+
+# Qt 相关
+*.pro.user
+*.pro.user.*
+*.qmake.stash
+moc_*.cpp
+moc_*.h
+qrc_*.cpp
+ui_*.h
+
+# 数据文件（如果需要保留，可以注释掉）
+data/
+*.txt
+
+# IDE 文件
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# 系统文件
+.DS_Store
+Thumbs.db
+

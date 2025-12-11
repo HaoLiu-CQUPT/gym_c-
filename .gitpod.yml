@@ -1,0 +1,45 @@
+# Gitpod 配置文件
+# 用于在浏览器中在线运行 Qt 项目
+
+image:
+  # 使用 Ubuntu 22.04 作为基础镜像
+  file: .gitpod.Dockerfile
+
+# 任务配置 - 在 Gitpod 启动时执行
+tasks:
+  - name: 安装 Qt 和编译环境
+    init: |
+      echo "🚀 开始安装 Qt 和编译环境..."
+      bash .gitpod/setup.sh
+    command: |
+      echo "✅ 环境配置完成！"
+      echo ""
+      echo "📝 可用命令："
+      echo "  - 快速启动: ./quick-start.sh  (一键编译并运行)"
+      echo "  - 编译项目: ./build.sh"
+      echo "  - 运行项目: ./run.sh"
+      echo "  - 清理编译: ./clean.sh"
+      echo ""
+      echo "💡 提示：Gitpod 支持 X11 图形界面，可以直接运行 Qt 应用"
+      echo "💡 提示：首次启动可能需要 5-10 分钟安装 Qt"
+
+# 端口配置（如果需要网络访问）
+ports:
+  - port: 6080
+    onOpen: ignore
+    description: VNC 端口（如果需要远程桌面）
+
+# VS Code 扩展推荐
+vscode:
+  extensions:
+    - ms-vscode.cpptools
+    - ms-vscode.cmake-tools
+    - twxs.cmake
+
+# 环境变量
+env:
+  - name: DISPLAY
+    value: :99
+  - name: QT_QPA_PLATFORM
+    value: xcb
+
