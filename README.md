@@ -267,7 +267,7 @@ c++_work/
 
 ### Gitpod
 
-1. 访问：`https://gitpod.io/#<你的GitHub仓库地址>`
+1. 访问：`https://gitpod.io/HaoLiu-CQUPT/gym_c-.git`
 2. 等待环境自动配置
 3. 运行编译脚本：
    ```bash
@@ -353,27 +353,3 @@ cmake .. -DCMAKE_PREFIX_PATH="C:\Qt\6.5.0\mingw_64"
 - ✅ 会员、教练、课程、器械、预约管理
 - ✅ 统计报表功能
 - ✅ 数据持久化存储
-
-## 🤝 贡献
-
-欢迎提交 Issue 和 Pull Request！
-
-## 📄 许可证
-
-本项目采用 MIT 许可证。详见 LICENSE 文件。
-
-## 📞 联系方式
-
-如有问题或建议，请通过以下方式联系：
-
-- 提交 Issue: [GitHub Issues](https://github.com/your-repo/issues)
-- 邮箱: your-email@example.com
-
-## 🙏 致谢
-
-- [Qt 框架](https://www.qt.io/)
-- 所有贡献者和用户
-
----
-
-**注意**: 这是一个学习项目，用于演示 Qt Widgets 应用程序开发。在生产环境中使用前，请确保进行充分测试和安全审查。
