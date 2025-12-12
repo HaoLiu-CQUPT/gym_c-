@@ -56,3 +56,4 @@ ENV PATH="/home/gitpod/Qt/6.5.0/gcc_64/bin:${PATH}"
 ENV LD_LIBRARY_PATH="/home/gitpod/Qt/6.5.0/gcc_64/lib:${LD_LIBRARY_PATH}"
 ENV QT_QPA_PLATFORM_PLUGIN_PATH="/home/gitpod/Qt/6.5.0/gcc_64/plugins"
 
+

@@ -2,6 +2,7 @@
 #include <QDir>
 #include <QFile>
 #include <QTextStream>
+#include <QStringConverter>
 #include <QDebug>
 #include <QStringConverter>
 

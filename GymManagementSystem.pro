@@ -41,4 +41,3 @@ HEADERS += \
     datamanager.h
 
 # FORMS 文件已移除，使用代码创建UI
-

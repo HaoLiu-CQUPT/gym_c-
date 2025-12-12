@@ -108,7 +108,7 @@ QT_DIR="/home/gitpod/Qt/6.5.0/gcc_64"  # 改为你需要的版本
 
 2. **qmake**
    ```bash
-   qmake StudentManagementSystem.pro
+   qmake GymManagementSystem.pro
    make
    ```
 
@@ -170,4 +170,5 @@ ls -la build/GymManagementSystem
 ```
 https://gitpod.io/#https://github.com/你的用户名/你的仓库名
 ```
+
 

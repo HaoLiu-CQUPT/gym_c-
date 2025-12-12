@@ -956,3 +956,4 @@ void MainWindow::switchToStatisticsPage()
 
 
 
+

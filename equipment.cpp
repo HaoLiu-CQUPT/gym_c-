@@ -16,3 +16,4 @@ Equipment::Equipment(const QString& id, const QString& name, const QString& type
 
 
 
+

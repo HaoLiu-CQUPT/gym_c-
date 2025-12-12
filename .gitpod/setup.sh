@@ -119,7 +119,7 @@ if command -v cmake &> /dev/null; then
 # 备用：使用 qmake
 elif command -v qmake6 &> /dev/null || command -v qmake &> /dev/null; then
     echo "📋 使用 qmake 编译项目..."
-    qmake ../StudentManagementSystem.pro
+    qmake ../GymManagementSystem.pro
     make -j$(nproc)
     echo "✅ 编译完成！可执行文件在: build/GymManagementSystem"
 else
